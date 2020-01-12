@@ -16,6 +16,12 @@
 		497218EB23CB93610013ED1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497218E923CB93610013ED1F /* LaunchScreen.storyboard */; };
 		497218F623CB93610013ED1F /* HabitissimoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497218F523CB93610013ED1F /* HabitissimoTests.swift */; };
 		4972190123CB93610013ED1F /* HabitissimoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972190023CB93610013ED1F /* HabitissimoUITests.swift */; };
+		4972192123CB959F0013ED1F /* BudgetListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972191B23CB959F0013ED1F /* BudgetListPresenter.swift */; };
+		4972192223CB959F0013ED1F /* BudgetListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972191C23CB959F0013ED1F /* BudgetListRouter.swift */; };
+		4972192323CB959F0013ED1F /* BudgetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972191D23CB959F0013ED1F /* BudgetListViewController.swift */; };
+		4972192423CB959F0013ED1F /* BudgetListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972191E23CB959F0013ED1F /* BudgetListProtocols.swift */; };
+		4972192523CB959F0013ED1F /* BudgetListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972191F23CB959F0013ED1F /* BudgetListInteractor.swift */; };
+		4972192623CB959F0013ED1F /* BudgetListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4972192023CB959F0013ED1F /* BudgetListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,12 @@
 		497218FC23CB93610013ED1F /* HabitissimoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitissimoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4972190023CB93610013ED1F /* HabitissimoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitissimoUITests.swift; sourceTree = "<group>"; };
 		4972190223CB93610013ED1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4972191B23CB959F0013ED1F /* BudgetListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListPresenter.swift; sourceTree = "<group>"; };
+		4972191C23CB959F0013ED1F /* BudgetListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListRouter.swift; sourceTree = "<group>"; };
+		4972191D23CB959F0013ED1F /* BudgetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListViewController.swift; sourceTree = "<group>"; };
+		4972191E23CB959F0013ED1F /* BudgetListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListProtocols.swift; sourceTree = "<group>"; };
+		4972191F23CB959F0013ED1F /* BudgetListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListInteractor.swift; sourceTree = "<group>"; };
+		4972192023CB959F0013ED1F /* BudgetListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetListViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +113,7 @@
 		497218DA23CB935E0013ED1F /* Habitissimo */ = {
 			isa = PBXGroup;
 			children = (
+				4972191A23CB95880013ED1F /* BadgetList */,
 				497218DB23CB935E0013ED1F /* AppDelegate.swift */,
 				497218DD23CB935E0013ED1F /* SceneDelegate.swift */,
 				497218DF23CB935E0013ED1F /* ViewController.swift */,
@@ -129,6 +142,19 @@
 				4972190223CB93610013ED1F /* Info.plist */,
 			);
 			path = HabitissimoUITests;
+			sourceTree = "<group>";
+		};
+		4972191A23CB95880013ED1F /* BadgetList */ = {
+			isa = PBXGroup;
+			children = (
+				4972191B23CB959F0013ED1F /* BudgetListPresenter.swift */,
+				4972191C23CB959F0013ED1F /* BudgetListRouter.swift */,
+				4972191D23CB959F0013ED1F /* BudgetListViewController.swift */,
+				4972191E23CB959F0013ED1F /* BudgetListProtocols.swift */,
+				4972191F23CB959F0013ED1F /* BudgetListInteractor.swift */,
+				4972192023CB959F0013ED1F /* BudgetListViewController.xib */,
+			);
+			path = BadgetList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +264,7 @@
 				497218EB23CB93610013ED1F /* LaunchScreen.storyboard in Resources */,
 				497218E823CB93610013ED1F /* Assets.xcassets in Resources */,
 				497218E323CB935E0013ED1F /* Main.storyboard in Resources */,
+				4972192623CB959F0013ED1F /* BudgetListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,8 +289,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4972192423CB959F0013ED1F /* BudgetListProtocols.swift in Sources */,
+				4972192323CB959F0013ED1F /* BudgetListViewController.swift in Sources */,
+				4972192123CB959F0013ED1F /* BudgetListPresenter.swift in Sources */,
+				4972192523CB959F0013ED1F /* BudgetListInteractor.swift in Sources */,
 				497218E623CB935E0013ED1F /* Habitissimo.xcdatamodeld in Sources */,
 				497218E023CB935E0013ED1F /* ViewController.swift in Sources */,
+				4972192223CB959F0013ED1F /* BudgetListRouter.swift in Sources */,
 				497218DC23CB935E0013ED1F /* AppDelegate.swift in Sources */,
 				497218DE23CB935E0013ED1F /* SceneDelegate.swift in Sources */,
 			);
