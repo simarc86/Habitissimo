@@ -14,8 +14,7 @@ class BudgetListRouter: BudgetListWireframeProtocol {
     weak var viewController: UIViewController?
     
     static func createModule() -> UIViewController {
-        // Change to get view from storyboard if not using progammatic UI
-        let view = BudgetListViewController(nibName: nil, bundle: nil)
+        let view = BudgetListViewController(nibName: "BudgetListViewController", bundle: nil)
         let interactor = BudgetListInteractor()
         let router = BudgetListRouter()
         let presenter = BudgetListPresenter(interface: view, interactor: interactor, router: router)
