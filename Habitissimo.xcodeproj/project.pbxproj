@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		497218DC23CB935E0013ED1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497218DB23CB935E0013ED1F /* AppDelegate.swift */; };
 		497218DE23CB935E0013ED1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497218DD23CB935E0013ED1F /* SceneDelegate.swift */; };
-		497218E023CB935E0013ED1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497218DF23CB935E0013ED1F /* ViewController.swift */; };
 		497218E623CB935E0013ED1F /* Habitissimo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 497218E423CB935E0013ED1F /* Habitissimo.xcdatamodeld */; };
 		497218E823CB93610013ED1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 497218E723CB93610013ED1F /* Assets.xcassets */; };
 		497218EB23CB93610013ED1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497218E923CB93610013ED1F /* LaunchScreen.storyboard */; };
@@ -21,10 +20,14 @@
 		4972192423CB959F0013ED1F /* BudgetListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972191E23CB959F0013ED1F /* BudgetListProtocols.swift */; };
 		4972192523CB959F0013ED1F /* BudgetListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972191F23CB959F0013ED1F /* BudgetListInteractor.swift */; };
 		4972192623CB959F0013ED1F /* BudgetListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4972192023CB959F0013ED1F /* BudgetListViewController.xib */; };
-		4972192823CB9F1E0013ED1F /* BudgetListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972192723CB9F1E0013ED1F /* BudgetListAPI.swift */; };
-		4972192A23CB9F450013ED1F /* BudgetListLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972192923CB9F450013ED1F /* BudgetListLocal.swift */; };
 		4972192D23CBAB770013ED1F /* BudgetListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972192B23CBAB770013ED1F /* BudgetListTableViewCell.swift */; };
 		4972192E23CBAB770013ED1F /* BudgetListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4972192C23CBAB770013ED1F /* BudgetListTableViewCell.xib */; };
+		4972193023CCF5E20013ED1F /* BudgetListDataRetriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972192F23CCF5E20013ED1F /* BudgetListDataRetriver.swift */; };
+		4972193223CCF70D0013ED1F /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972193123CCF70D0013ED1F /* APIService.swift */; };
+		4972193423CCF7F90013ED1F /* LocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972193323CCF7F90013ED1F /* LocalService.swift */; };
+		4972193823CCF9030013ED1F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972193723CCF9030013ED1F /* Category.swift */; };
+		4972193A23CCFCC70013ED1F /* BudgetListResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972193923CCFCC70013ED1F /* BudgetListResolver.swift */; };
+		4972193C23CCFFEE0013ED1F /* BudgetListMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972193B23CCFFEE0013ED1F /* BudgetListMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +51,6 @@
 		497218D823CB935E0013ED1F /* Habitissimo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habitissimo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		497218DB23CB935E0013ED1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		497218DD23CB935E0013ED1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		497218DF23CB935E0013ED1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		497218E523CB935E0013ED1F /* Habitissimo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Habitissimo.xcdatamodel; sourceTree = "<group>"; };
 		497218E723CB93610013ED1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		497218EA23CB93610013ED1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,10 +67,14 @@
 		4972191E23CB959F0013ED1F /* BudgetListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListProtocols.swift; sourceTree = "<group>"; };
 		4972191F23CB959F0013ED1F /* BudgetListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListInteractor.swift; sourceTree = "<group>"; };
 		4972192023CB959F0013ED1F /* BudgetListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetListViewController.xib; sourceTree = "<group>"; };
-		4972192723CB9F1E0013ED1F /* BudgetListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListAPI.swift; sourceTree = "<group>"; };
-		4972192923CB9F450013ED1F /* BudgetListLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListLocal.swift; sourceTree = "<group>"; };
 		4972192B23CBAB770013ED1F /* BudgetListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListTableViewCell.swift; sourceTree = "<group>"; };
 		4972192C23CBAB770013ED1F /* BudgetListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetListTableViewCell.xib; sourceTree = "<group>"; };
+		4972192F23CCF5E20013ED1F /* BudgetListDataRetriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListDataRetriver.swift; sourceTree = "<group>"; };
+		4972193123CCF70D0013ED1F /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		4972193323CCF7F90013ED1F /* LocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalService.swift; sourceTree = "<group>"; };
+		4972193723CCF9030013ED1F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		4972193923CCFCC70013ED1F /* BudgetListResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListResolver.swift; sourceTree = "<group>"; };
+		4972193B23CCFFEE0013ED1F /* BudgetListMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,10 +125,11 @@
 		497218DA23CB935E0013ED1F /* Habitissimo */ = {
 			isa = PBXGroup;
 			children = (
+				4972193623CCF8ED0013ED1F /* Models */,
+				4972193523CCF8B80013ED1F /* Services */,
 				4972191A23CB95880013ED1F /* BadgetList */,
 				497218DB23CB935E0013ED1F /* AppDelegate.swift */,
 				497218DD23CB935E0013ED1F /* SceneDelegate.swift */,
-				497218DF23CB935E0013ED1F /* ViewController.swift */,
 				497218E723CB93610013ED1F /* Assets.xcassets */,
 				497218E923CB93610013ED1F /* LaunchScreen.storyboard */,
 				497218EC23CB93610013ED1F /* Info.plist */,
@@ -160,10 +167,28 @@
 				4972192023CB959F0013ED1F /* BudgetListViewController.xib */,
 				4972192B23CBAB770013ED1F /* BudgetListTableViewCell.swift */,
 				4972192C23CBAB770013ED1F /* BudgetListTableViewCell.xib */,
-				4972192723CB9F1E0013ED1F /* BudgetListAPI.swift */,
-				4972192923CB9F450013ED1F /* BudgetListLocal.swift */,
+				4972192F23CCF5E20013ED1F /* BudgetListDataRetriver.swift */,
+				4972193923CCFCC70013ED1F /* BudgetListResolver.swift */,
+				4972193B23CCFFEE0013ED1F /* BudgetListMapper.swift */,
 			);
 			path = BadgetList;
+			sourceTree = "<group>";
+		};
+		4972193523CCF8B80013ED1F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4972193123CCF70D0013ED1F /* APIService.swift */,
+				4972193323CCF7F90013ED1F /* LocalService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4972193623CCF8ED0013ED1F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4972193723CCF9030013ED1F /* Category.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,17 +324,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				4972192423CB959F0013ED1F /* BudgetListProtocols.swift in Sources */,
+				4972193023CCF5E20013ED1F /* BudgetListDataRetriver.swift in Sources */,
+				4972193823CCF9030013ED1F /* Category.swift in Sources */,
 				4972192323CB959F0013ED1F /* BudgetListViewController.swift in Sources */,
 				4972192D23CBAB770013ED1F /* BudgetListTableViewCell.swift in Sources */,
 				4972192123CB959F0013ED1F /* BudgetListPresenter.swift in Sources */,
-				4972192A23CB9F450013ED1F /* BudgetListLocal.swift in Sources */,
 				4972192523CB959F0013ED1F /* BudgetListInteractor.swift in Sources */,
 				497218E623CB935E0013ED1F /* Habitissimo.xcdatamodeld in Sources */,
-				497218E023CB935E0013ED1F /* ViewController.swift in Sources */,
+				4972193423CCF7F90013ED1F /* LocalService.swift in Sources */,
+				4972193223CCF70D0013ED1F /* APIService.swift in Sources */,
+				4972193C23CCFFEE0013ED1F /* BudgetListMapper.swift in Sources */,
 				4972192223CB959F0013ED1F /* BudgetListRouter.swift in Sources */,
+				4972193A23CCFCC70013ED1F /* BudgetListResolver.swift in Sources */,
 				497218DC23CB935E0013ED1F /* AppDelegate.swift in Sources */,
 				497218DE23CB935E0013ED1F /* SceneDelegate.swift in Sources */,
-				4972192823CB9F1E0013ED1F /* BudgetListAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

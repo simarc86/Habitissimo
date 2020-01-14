@@ -10,6 +10,17 @@
 import UIKit
 
 class BudgetListInteractor: BudgetListInteractorProtocol {
-
     weak var presenter: BudgetListPresenterProtocol?
+    let retriver = BudgetListDataRetriver()
+    var categories: [Category]? {
+        didSet {
+            presenter?.categories(budgets: categories)
+        }
+    }
+    
+    func fetchData() {
+        retriver.getCategories { (categories) in
+            self.categories = categories
+        }
+    }
 }

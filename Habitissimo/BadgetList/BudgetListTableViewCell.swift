@@ -11,15 +11,8 @@ import UIKit
 class BudgetListTableViewCell: UITableViewCell {
     static let identifier = "BudgetListTableViewCell"
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func setup(_ category: Category?) {
+        guard let category = category else { return }
+        textLabel?.text = category.description
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }

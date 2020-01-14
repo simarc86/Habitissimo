@@ -10,15 +10,30 @@
 import UIKit
 
 class BudgetListPresenter: BudgetListPresenterProtocol {
-
     weak private var view: BudgetListViewProtocol?
     var interactor: BudgetListInteractorProtocol?
     private let router: BudgetListWireframeProtocol
 
+    var categories: [Category]? {
+        didSet {
+            self.view?.reloadData()
+        }
+    }
+    
     init(interface: BudgetListViewProtocol, interactor: BudgetListInteractorProtocol?, router: BudgetListWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router
+        self.categories = interactor?.categories
     }
 
+    func viewWillAppear() {
+        interactor?.fetchData()
+    }
+    
+    func categories(budgets: [Category]?) {
+        DispatchQueue.main.async {
+            self.categories = budgets
+        }
+    }
 }
