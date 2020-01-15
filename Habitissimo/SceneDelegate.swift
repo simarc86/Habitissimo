@@ -17,10 +17,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
 
         let budgetListModule = BudgetListRouter.createModule()
-
+        let navigationController = UINavigationController(rootViewController: budgetListModule)
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = budgetListModule
+            window.rootViewController = navigationController
             self.window = window
             window.makeKeyAndVisible()
         }
