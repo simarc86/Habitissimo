@@ -28,6 +28,7 @@
 		4972193823CCF9030013ED1F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972193723CCF9030013ED1F /* Category.swift */; };
 		4972193A23CCFCC70013ED1F /* BudgetListResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972193923CCFCC70013ED1F /* BudgetListResolver.swift */; };
 		4972193C23CCFFEE0013ED1F /* BudgetListMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972193B23CCFFEE0013ED1F /* BudgetListMapper.swift */; };
+		497F695C23CE63B70019E564 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497F695B23CE63B70019E564 /* Budget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		4972193723CCF9030013ED1F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4972193923CCFCC70013ED1F /* BudgetListResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListResolver.swift; sourceTree = "<group>"; };
 		4972193B23CCFFEE0013ED1F /* BudgetListMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListMapper.swift; sourceTree = "<group>"; };
+		497F695B23CE63B70019E564 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				4972193723CCF9030013ED1F /* Category.swift */,
+				497F695B23CE63B70019E564 /* Budget.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 			files = (
 				4972192423CB959F0013ED1F /* BudgetListProtocols.swift in Sources */,
 				4972193023CCF5E20013ED1F /* BudgetListDataRetriver.swift in Sources */,
+				497F695C23CE63B70019E564 /* Budget.swift in Sources */,
 				4972193823CCF9030013ED1F /* Category.swift in Sources */,
 				4972192323CB959F0013ED1F /* BudgetListViewController.swift in Sources */,
 				4972192D23CBAB770013ED1F /* BudgetListTableViewCell.swift in Sources */,
