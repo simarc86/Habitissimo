@@ -11,8 +11,8 @@ import UIKit
 class BudgetListTableViewCell: UITableViewCell {
     static let identifier = "BudgetListTableViewCell"
     
-    func setup(_ category: Category?) {
-        guard let category = category else { return }
-        textLabel?.text = category.description
+    func setup(_ budget: Budget?) {
+        guard let budget = budget else { return }
+        textLabel?.text = budget.name
     }
 }

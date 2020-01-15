@@ -10,11 +10,11 @@
 import UIKit
 
 class BudgetListRouter: BudgetListWireframeProtocol {
-    
+    static let xibName = "BudgetListViewController"
     weak var viewController: UIViewController?
     
     static func createModule() -> UIViewController {
-        let view = BudgetListViewController(nibName: "BudgetListViewController", bundle: nil)
+        let view = BudgetListViewController(nibName: xibName, bundle: nil)
         let interactor = BudgetListInteractor()
         let router = BudgetListRouter()
         let presenter = BudgetListPresenter(interface: view, interactor: interactor, router: router)
@@ -24,5 +24,10 @@ class BudgetListRouter: BudgetListWireframeProtocol {
         router.viewController = view
         
         return view
+    }
+    
+    func showNewBudget() {
+        let newBadgetModule = NewBadgetRouter.createModule()
+        viewController?.present(newBadgetModule, animated: true, completion: nil)
     }
 }

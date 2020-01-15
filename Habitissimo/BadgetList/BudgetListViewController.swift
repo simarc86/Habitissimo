@@ -17,6 +17,7 @@ class BudgetListViewController: UIViewController, BudgetListViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        setAddButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,11 +33,20 @@ class BudgetListViewController: UIViewController, BudgetListViewProtocol {
     func reloadData() {
         tableView.reloadData()
     }
+    
+    private func setAddButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+    }
+    
+    @objc
+    func addTapped() {
+        presenter?.addTapped()
+    }
 }
 
 extension BudgetListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter?.categories?.count ?? 0
+        return presenter?.budgets?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,8 +55,8 @@ extension BudgetListViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         let row = indexPath.row
-        let category = presenter?.categories?[row]
-        cell.setup(category)
+        let budget = presenter?.budgets?[row]
+        cell.setup(budget)
         return cell
     }
 }

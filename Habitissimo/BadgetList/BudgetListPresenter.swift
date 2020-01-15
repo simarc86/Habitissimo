@@ -14,7 +14,8 @@ class BudgetListPresenter: BudgetListPresenterProtocol {
     var interactor: BudgetListInteractorProtocol?
     private let router: BudgetListWireframeProtocol
 
-    var categories: [Category]? {
+    var categories: [Category]?
+    var budgets: [Budget]? {
         didSet {
             self.view?.reloadData()
         }
@@ -24,16 +25,20 @@ class BudgetListPresenter: BudgetListPresenterProtocol {
         self.view = interface
         self.interactor = interactor
         self.router = router
-        self.categories = interactor?.categories
+        self.budgets = interactor?.budgets
     }
 
     func viewWillAppear() {
         interactor?.fetchData()
     }
     
-    func categories(budgets: [Category]?) {
+    func reloadData(budgets: [Budget]?) {
         DispatchQueue.main.async {
-            self.categories = budgets
+            self.budgets = budgets
         }
+    }
+    
+    func addTapped() {
+        router.showNewBudget()
     }
 }

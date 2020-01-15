@@ -9,12 +9,47 @@
 import Foundation
 import CoreData
 
+enum Entity: String {
+    case budget = "Budget"
+}
+
 class LocalService {
-    func getData() -> Any {
-        return "LOCAL DATA"
+    let modelName = "Habitissimo"
+
+    public let context: NSManagedObjectContext
+    let persistentContainer: NSPersistentContainer
+    
+    public init() {
+        persistentContainer = NSPersistentContainer(name: modelName)
+        persistentContainer.loadPersistentStores { storeDescription, error in
+            if let error = error {
+                assertionFailure(error.localizedDescription)
+            }
+        }
+        context = persistentContainer.viewContext
     }
     
-    func saveData() {
-        let budget = Budget(entity: <#T##NSEntityDescription#>, insertInto: <#T##NSManagedObjectContext?#>)
+    func fetchData(entity: Entity, completion: @escaping (NSFetchRequest<NSFetchRequestResult>?) -> Void) {
+        let itemsFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity.rawValue)
+        completion(itemsFetchRequest)
+    }
+    
+    func getData() -> [Budget] {
+        let itemsFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Budget")
+        let fetchedItems = try! context.fetch(itemsFetchRequest) as! [Budget]
+        print("Fetched items: \(fetchedItems)")
+        return fetchedItems
+    }
+    
+    func saveData(budget: Budget) {
+        let item = NSEntityDescription.insertNewObject(forEntityName: "Budget", into: context) as! Budget
+        item.customDescription = ""
+        item.email = ""
+        item.id = ""
+        item.location = ""
+        item.name = ""
+        item.phone = 44
+//        item.subcategory = ""
+        try! context.save()
     }
 }
