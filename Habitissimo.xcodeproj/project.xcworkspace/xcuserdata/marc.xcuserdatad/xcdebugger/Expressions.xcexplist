@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "NewBadgetViewController.pickerView(_:numberOfRowsInComponent:):NewBadgetViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "presenter?.categories?.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

@@ -12,7 +12,6 @@ import UIKit
 class BudgetListInteractor: BudgetListInteractorProtocol {
     weak var presenter: BudgetListPresenterProtocol?
     let retriver = BudgetListDataRetriver()
-    var categories: [Category]?
     var budgets: [Budget]?{
         didSet {
             presenter?.reloadData(budgets: budgets)
@@ -20,18 +19,7 @@ class BudgetListInteractor: BudgetListInteractorProtocol {
     }
     
     func fetchData() {
-        fetchCategories()
         fetchBudgets()
-    }
-    
-//    func saveBudget() {
-//        retriver.saveBudget()
-//    }
-    
-    func fetchCategories() {
-        retriver.getCategories { (categories) in
-            self.categories = categories
-        }
     }
     
     func fetchBudgets() {

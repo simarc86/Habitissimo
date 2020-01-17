@@ -14,7 +14,6 @@ class BudgetListPresenter: BudgetListPresenterProtocol {
     var interactor: BudgetListInteractorProtocol?
     private let router: BudgetListWireframeProtocol
 
-    var categories: [Category]?
     var budgets: [Budget]? {
         didSet {
             self.view?.reloadData()

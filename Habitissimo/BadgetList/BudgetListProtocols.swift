@@ -15,8 +15,8 @@ protocol BudgetListWireframeProtocol: class {
 }
 //MARK: Presenter -
 protocol BudgetListPresenterProtocol: class {
-    var categories: [Category]? { get }
     var budgets: [Budget]? { get }
+    
     func viewWillAppear()
     func reloadData(budgets: [Budget]?)
     func addTapped()
@@ -24,9 +24,7 @@ protocol BudgetListPresenterProtocol: class {
 
 //MARK: Interactor -
 protocol BudgetListInteractorProtocol: class {
-    var categories: [Category]? { get }
     var budgets: [Budget]? { get }
-
     var presenter: BudgetListPresenterProtocol?  { get set }
     
     func fetchData()
@@ -34,7 +32,6 @@ protocol BudgetListInteractorProtocol: class {
 
 //MARK: View -
 protocol BudgetListViewProtocol: class {
-
     var presenter: BudgetListPresenterProtocol?  { get set }
     
     func reloadData()
