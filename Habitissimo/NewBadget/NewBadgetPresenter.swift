@@ -10,6 +10,11 @@
 import UIKit
 
 class NewBadgetPresenter: NewBadgetPresenterProtocol {
+    var categories: [Category]? {
+        didSet {
+            view?.reloadData()
+        }
+    }
 
     weak private var view: NewBadgetViewProtocol?
     var interactor: NewBadgetInteractorProtocol?
@@ -21,4 +26,13 @@ class NewBadgetPresenter: NewBadgetPresenterProtocol {
         self.router = router
     }
 
+    func viewWillAppear() {
+        interactor?.fetchData()
+    }
+    
+    func reloadData(categories: [Category]?) {
+        DispatchQueue.main.async {
+            self.categories = categories
+        }
+    }
 }

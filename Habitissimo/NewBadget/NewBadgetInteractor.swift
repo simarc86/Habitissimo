@@ -10,6 +10,21 @@
 import UIKit
 
 class NewBadgetInteractor: NewBadgetInteractorProtocol {
-
+    var categories: [Category]? {
+        didSet {
+            presenter?.reloadData(categories: categories)
+        }
+    }
+    let retriver = NewBadgetDataRetriver()
     weak var presenter: NewBadgetPresenterProtocol?
+        
+    func fetchData() {
+        fetchCategories()
+    }
+    
+    func fetchCategories() {
+        retriver.getCategories { (categories) in
+            self.categories = categories
+        }
+    }
 }

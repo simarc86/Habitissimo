@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewBadgetViewController" customModule="Habitissimo" customModuleProvider="target">
             <connections>
+                <outlet property="categoryPickerView" destination="5pu-SX-NKH" id="wLg-wv-H1S"/>
+                <outlet property="descriptionView" destination="V0P-Ce-S8v" id="4oi-C3-y9Q"/>
+                <outlet property="emailTextField" destination="m8Z-Oo-8e2" id="zOf-9c-fku"/>
+                <outlet property="nameTextField" destination="Svi-yT-Be1" id="6tY-9Z-KHq"/>
+                <outlet property="phoneTextField" destination="wty-cx-fdC" id="GIo-bE-O8b"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,8 +21,56 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Svi-yT-Be1">
+                    <rect key="frame" x="16" y="32" width="343" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m8Z-Oo-8e2">
+                    <rect key="frame" x="16" y="148" width="343" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wty-cx-fdC">
+                    <rect key="frame" x="16" y="90" width="343" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                </textField>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="V0P-Ce-S8v" customClass="HTextView" customModule="Habitissimo" customModuleProvider="target">
+                    <rect key="frame" x="16" y="206" width="343" height="33"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5pu-SX-NKH">
+                    <rect key="frame" x="16" y="238" width="343" height="216"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="216" id="ios-Ep-kQN"/>
+                    </constraints>
+                </pickerView>
+            </subviews>
             <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="138" y="153"/>
+            <constraints>
+                <constraint firstItem="wty-cx-fdC" firstAttribute="top" secondItem="Svi-yT-Be1" secondAttribute="bottom" constant="24" id="0Sr-HR-bgm"/>
+                <constraint firstItem="5pu-SX-NKH" firstAttribute="leading" secondItem="V0P-Ce-S8v" secondAttribute="leading" id="7Dr-lT-uez"/>
+                <constraint firstItem="m8Z-Oo-8e2" firstAttribute="trailing" secondItem="wty-cx-fdC" secondAttribute="trailing" id="AKR-HM-dhx"/>
+                <constraint firstItem="V0P-Ce-S8v" firstAttribute="leading" secondItem="m8Z-Oo-8e2" secondAttribute="leading" id="GqD-DG-N2j"/>
+                <constraint firstItem="5pu-SX-NKH" firstAttribute="trailing" secondItem="V0P-Ce-S8v" secondAttribute="trailing" id="I2F-5Z-swW"/>
+                <constraint firstItem="V0P-Ce-S8v" firstAttribute="trailing" secondItem="m8Z-Oo-8e2" secondAttribute="trailing" id="SAe-x6-qbf"/>
+                <constraint firstItem="wty-cx-fdC" firstAttribute="trailing" secondItem="Svi-yT-Be1" secondAttribute="trailing" id="TID-Kw-Fbs"/>
+                <constraint firstItem="Svi-yT-Be1" firstAttribute="leading" secondItem="piP-G0-acl" secondAttribute="leading" constant="16" id="Umb-wh-xGX"/>
+                <constraint firstItem="wty-cx-fdC" firstAttribute="leading" secondItem="Svi-yT-Be1" secondAttribute="leading" id="XLf-iR-yRr"/>
+                <constraint firstItem="V0P-Ce-S8v" firstAttribute="top" secondItem="m8Z-Oo-8e2" secondAttribute="bottom" constant="24" id="ZG4-Df-9Av"/>
+                <constraint firstItem="m8Z-Oo-8e2" firstAttribute="leading" secondItem="wty-cx-fdC" secondAttribute="leading" id="eWu-pX-mcg"/>
+                <constraint firstItem="5pu-SX-NKH" firstAttribute="top" secondItem="V0P-Ce-S8v" secondAttribute="bottom" constant="-1" id="lW8-bE-Ock"/>
+                <constraint firstItem="m8Z-Oo-8e2" firstAttribute="top" secondItem="wty-cx-fdC" secondAttribute="bottom" constant="24" id="qVa-SK-OTO"/>
+                <constraint firstItem="piP-G0-acl" firstAttribute="trailing" secondItem="Svi-yT-Be1" secondAttribute="trailing" constant="16" id="soA-SB-IP7"/>
+                <constraint firstItem="Svi-yT-Be1" firstAttribute="top" secondItem="piP-G0-acl" secondAttribute="top" constant="32" id="xnE-nv-lGw"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="piP-G0-acl"/>
+            <point key="canvasLocation" x="136.80000000000001" y="152.47376311844079"/>
         </view>
     </objects>
 </document>
