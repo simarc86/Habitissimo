@@ -15,22 +15,32 @@ protocol NewBadgetWireframeProtocol: class {
 }
 //MARK: Presenter -
 protocol NewBadgetPresenterProtocol: class {
+    var presentedCategories: [Category]? { get }
+    var subcategories: [Category]? { get }
     var categories: [Category]? { get }
-    
-    func viewWillAppear()
-    func reloadData(categories: [Category]?)
+
+    func reloadSubcategoriesData(subcategories: [Category]?)
+    func reloadCategoriesData(categories: [Category]?)
+    func categorySelected(index: Int)
+    func subcategorySelected(index: Int)
+    func requestCategory()
+    func requestSubcategory()
 }
 
 //MARK: Interactor -
 protocol NewBadgetInteractorProtocol: class {
+    var subcategories: [Category]? { get }
     var categories: [Category]? { get }
     var presenter: NewBadgetPresenterProtocol?  { get set }
     
-    func fetchData()
+    func fetchCategories()
+    func fetchSubcategories(of category: Category)
 }
 
 //MARK: View -
 protocol NewBadgetViewProtocol: class {
     var presenter: NewBadgetPresenterProtocol?  { get set }
-    func reloadData()
+    func reloadCategories()
+    func showPicker(value: Bool)
+    func updateCategoryComponent(text: String)
 }

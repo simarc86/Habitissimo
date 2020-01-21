@@ -10,8 +10,8 @@ import Foundation
 
 class APIService {
     let baseUrl = "https://api.habitissimo.es/"
-    func fetchData(endpoint: Endpoint, completion: @escaping (Data?) -> Void) {
-        let urlString = baseUrl + endpoint.rawValue
+    func fetchData(endpoint: String, completion: @escaping (Data?) -> Void) {
+        let urlString = baseUrl + endpoint
         if let url = URL(string:urlString) {
             URLSession.shared.dataTask(with: url) { (data, response, error) in
                 completion(data)

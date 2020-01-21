@@ -10,7 +10,7 @@ import Foundation
 
  class Category: Codable {
     let id: String
-    let description: String
+    let description: String?
     let subcategory: Int
     let name: String
     
