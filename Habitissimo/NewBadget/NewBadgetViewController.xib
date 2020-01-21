@@ -3,15 +3,18 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewBadgetViewController" customModule="Habitissimo" customModuleProvider="target">
             <connections>
+                <outlet property="categoryButton" destination="pTy-c2-XIf" id="YZ9-Np-d0t"/>
                 <outlet property="categoryPickerView" destination="5pu-SX-NKH" id="wLg-wv-H1S"/>
                 <outlet property="descriptionView" destination="V0P-Ce-S8v" id="4oi-C3-y9Q"/>
                 <outlet property="emailTextField" destination="m8Z-Oo-8e2" id="zOf-9c-fku"/>
+                <outlet property="locationTextField" destination="lgD-5y-vWl" id="KWZ-nc-jbc"/>
                 <outlet property="nameTextField" destination="Svi-yT-Be1" id="6tY-9Z-KHq"/>
                 <outlet property="phoneTextField" destination="wty-cx-fdC" id="GIo-bE-O8b"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -22,55 +25,148 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Svi-yT-Be1">
-                    <rect key="frame" x="16" y="32" width="343" height="34"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Marc" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Svi-yT-Be1" customClass="HTextField" customModule="Habitissimo" customModuleProvider="target">
+                    <rect key="frame" x="96.5" y="32" width="262.5" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="TMg-ES-aMk"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m8Z-Oo-8e2">
-                    <rect key="frame" x="16" y="148" width="343" height="34"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="marc@habitissimo.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m8Z-Oo-8e2" customClass="HTextField" customModule="Habitissimo" customModuleProvider="target">
+                    <rect key="frame" x="96.5" y="148" width="262.5" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wty-cx-fdC">
-                    <rect key="frame" x="16" y="90" width="343" height="34"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="+34658917273" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wty-cx-fdC" customClass="HTextField" customModule="Habitissimo" customModuleProvider="target">
+                    <rect key="frame" x="96.5" y="90" width="262.5" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                 </textField>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="V0P-Ce-S8v" customClass="HTextView" customModule="Habitissimo" customModuleProvider="target">
-                    <rect key="frame" x="16" y="206" width="343" height="33"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Type here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="V0P-Ce-S8v" customClass="HTextView" customModule="Habitissimo" customModuleProvider="target">
+                    <rect key="frame" x="96.5" y="264" width="262.5" height="33"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5pu-SX-NKH">
-                    <rect key="frame" x="16" y="238" width="343" height="216"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTy-c2-XIf" customClass="HButton" customModule="Habitissimo" customModuleProvider="target">
+                    <rect key="frame" x="96.5" y="321" width="262.5" height="34"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="216" id="ios-Ep-kQN"/>
+                        <constraint firstAttribute="height" constant="34" id="xEv-dv-3Nk"/>
                     </constraints>
+                    <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="Tap for select">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="categoryDidTap:" destination="-1" eventType="touchUpInside" id="LFs-6K-3e7"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWk-X0-wPK">
+                    <rect key="frame" x="50.5" y="40.5" width="38" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjH-1L-ycE">
+                    <rect key="frame" x="37" y="98.5" width="41" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMk-Fh-x67">
+                    <rect key="frame" x="52.5" y="156.5" width="34.5" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Palma de Mallorca" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lgD-5y-vWl" customClass="HTextField" customModule="Habitissimo" customModuleProvider="target">
+                    <rect key="frame" x="96.5" y="206" width="262.5" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLZ-7m-55T">
+                    <rect key="frame" x="31" y="214.5" width="56" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5J-Ud-BSO">
+                    <rect key="frame" x="10" y="272" width="74" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgN-vS-f1g">
+                    <rect key="frame" x="22.5" y="329.5" width="59.5" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVh-D5-qYw">
+                    <rect key="frame" x="16" y="613" width="343" height="30"/>
+                    <color key="backgroundColor" name="defaultBackgroundField"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="mKZ-iy-eDW"/>
+                    </constraints>
+                    <state key="normal" title="Save">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                </button>
+                <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5pu-SX-NKH">
+                    <rect key="frame" x="39" y="355" width="320" height="216"/>
                 </pickerView>
             </subviews>
             <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="wty-cx-fdC" firstAttribute="top" secondItem="Svi-yT-Be1" secondAttribute="bottom" constant="24" id="0Sr-HR-bgm"/>
-                <constraint firstItem="5pu-SX-NKH" firstAttribute="leading" secondItem="V0P-Ce-S8v" secondAttribute="leading" id="7Dr-lT-uez"/>
+                <constraint firstItem="piP-G0-acl" firstAttribute="bottom" secondItem="GVh-D5-qYw" secondAttribute="bottom" constant="24" id="1QC-Wp-JtG"/>
+                <constraint firstItem="wty-cx-fdC" firstAttribute="height" secondItem="Svi-yT-Be1" secondAttribute="height" id="5fU-P0-RTc"/>
+                <constraint firstItem="Svi-yT-Be1" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.7" id="6JW-r1-zY0"/>
+                <constraint firstItem="GVh-D5-qYw" firstAttribute="top" secondItem="5pu-SX-NKH" secondAttribute="bottom" constant="42" id="94e-E5-Qea"/>
+                <constraint firstItem="pTy-c2-XIf" firstAttribute="leading" secondItem="V0P-Ce-S8v" secondAttribute="leading" id="A5F-mh-2Rj"/>
                 <constraint firstItem="m8Z-Oo-8e2" firstAttribute="trailing" secondItem="wty-cx-fdC" secondAttribute="trailing" id="AKR-HM-dhx"/>
+                <constraint firstItem="pTy-c2-XIf" firstAttribute="leading" secondItem="SgN-vS-f1g" secondAttribute="trailing" constant="14.5" id="BRi-aa-hcP"/>
+                <constraint firstItem="KLZ-7m-55T" firstAttribute="centerY" secondItem="lgD-5y-vWl" secondAttribute="centerY" id="FIO-T5-G9x"/>
                 <constraint firstItem="V0P-Ce-S8v" firstAttribute="leading" secondItem="m8Z-Oo-8e2" secondAttribute="leading" id="GqD-DG-N2j"/>
-                <constraint firstItem="5pu-SX-NKH" firstAttribute="trailing" secondItem="V0P-Ce-S8v" secondAttribute="trailing" id="I2F-5Z-swW"/>
+                <constraint firstItem="piP-G0-acl" firstAttribute="trailing" secondItem="GVh-D5-qYw" secondAttribute="trailing" constant="16" id="Hqc-CT-4RF"/>
+                <constraint firstItem="pTy-c2-XIf" firstAttribute="trailing" secondItem="V0P-Ce-S8v" secondAttribute="trailing" id="HrU-FC-cA4"/>
+                <constraint firstItem="5pu-SX-NKH" firstAttribute="trailing" secondItem="V0P-Ce-S8v" secondAttribute="trailing" id="KIo-xT-yDQ"/>
+                <constraint firstItem="lgD-5y-vWl" firstAttribute="leading" secondItem="KLZ-7m-55T" secondAttribute="trailing" constant="9.5" id="KqD-Fs-Bi6"/>
+                <constraint firstItem="wty-cx-fdC" firstAttribute="leading" secondItem="HjH-1L-ycE" secondAttribute="trailing" constant="18.5" id="L7Q-cl-lPi"/>
+                <constraint firstItem="Svi-yT-Be1" firstAttribute="leading" secondItem="oWk-X0-wPK" secondAttribute="trailing" constant="8" id="Qzg-dc-QTJ"/>
                 <constraint firstItem="V0P-Ce-S8v" firstAttribute="trailing" secondItem="m8Z-Oo-8e2" secondAttribute="trailing" id="SAe-x6-qbf"/>
+                <constraint firstItem="HjH-1L-ycE" firstAttribute="centerY" secondItem="wty-cx-fdC" secondAttribute="centerY" id="T5e-Ze-uiZ"/>
                 <constraint firstItem="wty-cx-fdC" firstAttribute="trailing" secondItem="Svi-yT-Be1" secondAttribute="trailing" id="TID-Kw-Fbs"/>
-                <constraint firstItem="Svi-yT-Be1" firstAttribute="leading" secondItem="piP-G0-acl" secondAttribute="leading" constant="16" id="Umb-wh-xGX"/>
                 <constraint firstItem="wty-cx-fdC" firstAttribute="leading" secondItem="Svi-yT-Be1" secondAttribute="leading" id="XLf-iR-yRr"/>
-                <constraint firstItem="V0P-Ce-S8v" firstAttribute="top" secondItem="m8Z-Oo-8e2" secondAttribute="bottom" constant="24" id="ZG4-Df-9Av"/>
+                <constraint firstItem="V0P-Ce-S8v" firstAttribute="leading" secondItem="p5J-Ud-BSO" secondAttribute="trailing" constant="12.5" id="XgW-Nb-jrR"/>
+                <constraint firstItem="m8Z-Oo-8e2" firstAttribute="leading" secondItem="yMk-Fh-x67" secondAttribute="trailing" constant="9.5" id="Zow-s1-Qs7"/>
+                <constraint firstItem="V0P-Ce-S8v" firstAttribute="top" secondItem="lgD-5y-vWl" secondAttribute="bottom" constant="24" id="bWk-H2-wLK"/>
+                <constraint firstItem="pTy-c2-XIf" firstAttribute="top" secondItem="V0P-Ce-S8v" secondAttribute="bottom" constant="24" id="cOf-dO-A5f"/>
                 <constraint firstItem="m8Z-Oo-8e2" firstAttribute="leading" secondItem="wty-cx-fdC" secondAttribute="leading" id="eWu-pX-mcg"/>
-                <constraint firstItem="5pu-SX-NKH" firstAttribute="top" secondItem="V0P-Ce-S8v" secondAttribute="bottom" constant="-1" id="lW8-bE-Ock"/>
+                <constraint firstItem="p5J-Ud-BSO" firstAttribute="centerY" secondItem="V0P-Ce-S8v" secondAttribute="centerY" id="g2A-XE-klP"/>
+                <constraint firstItem="5pu-SX-NKH" firstAttribute="top" secondItem="pTy-c2-XIf" secondAttribute="bottom" id="lBc-Mn-e8O"/>
+                <constraint firstItem="GVh-D5-qYw" firstAttribute="leading" secondItem="piP-G0-acl" secondAttribute="leading" constant="16" id="pyL-4R-cpV"/>
                 <constraint firstItem="m8Z-Oo-8e2" firstAttribute="top" secondItem="wty-cx-fdC" secondAttribute="bottom" constant="24" id="qVa-SK-OTO"/>
+                <constraint firstItem="lgD-5y-vWl" firstAttribute="trailing" secondItem="m8Z-Oo-8e2" secondAttribute="trailing" id="sR8-R3-S0k"/>
+                <constraint firstItem="m8Z-Oo-8e2" firstAttribute="height" secondItem="wty-cx-fdC" secondAttribute="height" id="scF-8C-1yd"/>
                 <constraint firstItem="piP-G0-acl" firstAttribute="trailing" secondItem="Svi-yT-Be1" secondAttribute="trailing" constant="16" id="soA-SB-IP7"/>
+                <constraint firstItem="yMk-Fh-x67" firstAttribute="centerY" secondItem="m8Z-Oo-8e2" secondAttribute="centerY" id="vTq-hj-Tzd"/>
+                <constraint firstItem="oWk-X0-wPK" firstAttribute="centerY" secondItem="Svi-yT-Be1" secondAttribute="centerY" id="wVe-Fl-eVn"/>
+                <constraint firstItem="SgN-vS-f1g" firstAttribute="centerY" secondItem="pTy-c2-XIf" secondAttribute="centerY" id="x3C-IH-W8y"/>
                 <constraint firstItem="Svi-yT-Be1" firstAttribute="top" secondItem="piP-G0-acl" secondAttribute="top" constant="32" id="xnE-nv-lGw"/>
+                <constraint firstItem="lgD-5y-vWl" firstAttribute="top" secondItem="m8Z-Oo-8e2" secondAttribute="bottom" constant="24" id="z2k-uJ-eds"/>
+                <constraint firstItem="lgD-5y-vWl" firstAttribute="leading" secondItem="m8Z-Oo-8e2" secondAttribute="leading" id="zcl-0z-2Be"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="piP-G0-acl"/>
             <point key="canvasLocation" x="136.80000000000001" y="152.47376311844079"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="defaultBackgroundField">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

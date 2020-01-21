@@ -1,16 +1,14 @@
 //
-//  HTextView.swift
+//  HTextField.swift
 //  Habitissimo
 //
-//  Created by Marc Tamarit on 16/01/2020.
+//  Created by Marc Tamarit on 19/01/2020.
 //  Copyright © 2020 marc. All rights reserved.
 //
 
 import UIKit
 
-class HTextView: UITextView {
-    var isEdited = false
-
+class HTextField: UITextField {
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         delegate = self
@@ -19,31 +17,21 @@ class HTextView: UITextView {
     
     func initalSetup(){
         textColor = ColorService.placeholderColor
-        text = "Descripción"
-        isEdited = false
         self.layoutIfNeeded()
     }
     
     func editedSetup() {
         textColor = ColorService.defaultTextColor
-        text = ""
-        isEdited = true
     }
 }
 
-extension HTextView: UITextViewDelegate {
+extension HTextField: UITextFieldDelegate {
     override func becomeFirstResponder() -> Bool {
-        if !isEdited {
-            editedSetup()
-        }
         backgroundColor = ColorService.foucusedBackgroundColor
         return super.becomeFirstResponder()
     }
     
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if text.isEmpty {
-            initalSetup()
-        }
+    func textFieldDidEndEditing(_ textField: UITextField) {
         backgroundColor = ColorService.defaultBackgoundColor
     }
 }

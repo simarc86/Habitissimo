@@ -10,7 +10,6 @@
 		496F0E2D23D48C1C00FD1737 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F0E2C23D48C1C00FD1737 /* Color.swift */; };
 		496F0E2F23D4BADD00FD1737 /* HButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F0E2E23D4BADD00FD1737 /* HButton.swift */; };
 		496F0E3323D4BF7300FD1737 /* ColorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F0E3223D4BF7300FD1737 /* ColorService.swift */; };
-		496F0E3523D4CAA300FD1737 /* HPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F0E3423D4CAA300FD1737 /* HPickerView.swift */; };
 		496F0E3723D4D00500FD1737 /* HTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F0E3623D4D00500FD1737 /* HTextField.swift */; };
 		496F0E3923D6541400FD1737 /* HPickerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F0E3823D6541400FD1737 /* HPickerLabel.swift */; };
 		497218DC23CB935E0013ED1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497218DB23CB935E0013ED1F /* AppDelegate.swift */; };
@@ -66,7 +65,6 @@
 		496F0E2C23D48C1C00FD1737 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		496F0E2E23D4BADD00FD1737 /* HButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HButton.swift; sourceTree = "<group>"; };
 		496F0E3223D4BF7300FD1737 /* ColorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorService.swift; sourceTree = "<group>"; };
-		496F0E3423D4CAA300FD1737 /* HPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPickerView.swift; sourceTree = "<group>"; };
 		496F0E3623D4D00500FD1737 /* HTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTextField.swift; sourceTree = "<group>"; };
 		496F0E3823D6541400FD1737 /* HPickerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPickerLabel.swift; sourceTree = "<group>"; };
 		497218D823CB935E0013ED1F /* Habitissimo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habitissimo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -253,7 +251,6 @@
 			children = (
 				497F696B23D101E80019E564 /* HTextView.swift */,
 				496F0E2E23D4BADD00FD1737 /* HButton.swift */,
-				496F0E3423D4CAA300FD1737 /* HPickerView.swift */,
 				496F0E3623D4D00500FD1737 /* HTextField.swift */,
 				496F0E3823D6541400FD1737 /* HPickerLabel.swift */,
 			);
@@ -406,7 +403,6 @@
 				4972192123CB959F0013ED1F /* BudgetListPresenter.swift in Sources */,
 				497F696423CFA9400019E564 /* NewBadgetPresenter.swift in Sources */,
 				4972192523CB959F0013ED1F /* BudgetListInteractor.swift in Sources */,
-				496F0E3523D4CAA300FD1737 /* HPickerView.swift in Sources */,
 				497F696C23D101E80019E564 /* HTextView.swift in Sources */,
 				497218E623CB935E0013ED1F /* Habitissimo.xcdatamodeld in Sources */,
 				497F696E23D2363A0019E564 /* NewBadgetDataRetriver.swift in Sources */,
