@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		496F0E2D23D48C1C00FD1737 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F0E2C23D48C1C00FD1737 /* Color.swift */; };
+		496F0E2F23D4BADD00FD1737 /* HButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F0E2E23D4BADD00FD1737 /* HButton.swift */; };
+		496F0E3323D4BF7300FD1737 /* ColorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F0E3223D4BF7300FD1737 /* ColorService.swift */; };
+		496F0E3523D4CAA300FD1737 /* HPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F0E3423D4CAA300FD1737 /* HPickerView.swift */; };
+		496F0E3723D4D00500FD1737 /* HTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F0E3623D4D00500FD1737 /* HTextField.swift */; };
+		496F0E3923D6541400FD1737 /* HPickerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F0E3823D6541400FD1737 /* HPickerLabel.swift */; };
 		497218DC23CB935E0013ED1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497218DB23CB935E0013ED1F /* AppDelegate.swift */; };
 		497218DE23CB935E0013ED1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497218DD23CB935E0013ED1F /* SceneDelegate.swift */; };
 		497218E623CB935E0013ED1F /* Habitissimo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 497218E423CB935E0013ED1F /* Habitissimo.xcdatamodeld */; };
@@ -27,7 +33,7 @@
 		4972193423CCF7F90013ED1F /* LocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972193323CCF7F90013ED1F /* LocalService.swift */; };
 		4972193823CCF9030013ED1F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972193723CCF9030013ED1F /* Category.swift */; };
 		4972193A23CCFCC70013ED1F /* BudgetListResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972193923CCFCC70013ED1F /* BudgetListResolver.swift */; };
-		4972193C23CCFFEE0013ED1F /* BudgetListMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972193B23CCFFEE0013ED1F /* BudgetListMapper.swift */; };
+		4972193C23CCFFEE0013ED1F /* NewBadgetMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972193B23CCFFEE0013ED1F /* NewBadgetMapper.swift */; };
 		497F695C23CE63B70019E564 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497F695B23CE63B70019E564 /* Budget.swift */; };
 		497F696423CFA9400019E564 /* NewBadgetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497F695E23CFA9400019E564 /* NewBadgetPresenter.swift */; };
 		497F696523CFA9400019E564 /* NewBadgetRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497F695F23CFA9400019E564 /* NewBadgetRouter.swift */; };
@@ -35,6 +41,8 @@
 		497F696723CFA9400019E564 /* NewBadgetProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497F696123CFA9400019E564 /* NewBadgetProtocols.swift */; };
 		497F696823CFA9400019E564 /* NewBadgetInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497F696223CFA9400019E564 /* NewBadgetInteractor.swift */; };
 		497F696923CFA9400019E564 /* NewBadgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497F696323CFA9400019E564 /* NewBadgetViewController.xib */; };
+		497F696C23D101E80019E564 /* HTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497F696B23D101E80019E564 /* HTextView.swift */; };
+		497F696E23D2363A0019E564 /* NewBadgetDataRetriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497F696D23D2363A0019E564 /* NewBadgetDataRetriver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +63,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		496F0E2C23D48C1C00FD1737 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		496F0E2E23D4BADD00FD1737 /* HButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HButton.swift; sourceTree = "<group>"; };
+		496F0E3223D4BF7300FD1737 /* ColorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorService.swift; sourceTree = "<group>"; };
+		496F0E3423D4CAA300FD1737 /* HPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPickerView.swift; sourceTree = "<group>"; };
+		496F0E3623D4D00500FD1737 /* HTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTextField.swift; sourceTree = "<group>"; };
+		496F0E3823D6541400FD1737 /* HPickerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPickerLabel.swift; sourceTree = "<group>"; };
 		497218D823CB935E0013ED1F /* Habitissimo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habitissimo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		497218DB23CB935E0013ED1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		497218DD23CB935E0013ED1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,7 +95,7 @@
 		4972193323CCF7F90013ED1F /* LocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalService.swift; sourceTree = "<group>"; };
 		4972193723CCF9030013ED1F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4972193923CCFCC70013ED1F /* BudgetListResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListResolver.swift; sourceTree = "<group>"; };
-		4972193B23CCFFEE0013ED1F /* BudgetListMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListMapper.swift; sourceTree = "<group>"; };
+		4972193B23CCFFEE0013ED1F /* NewBadgetMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBadgetMapper.swift; sourceTree = "<group>"; };
 		497F695B23CE63B70019E564 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		497F695E23CFA9400019E564 /* NewBadgetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBadgetPresenter.swift; sourceTree = "<group>"; };
 		497F695F23CFA9400019E564 /* NewBadgetRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBadgetRouter.swift; sourceTree = "<group>"; };
@@ -89,6 +103,8 @@
 		497F696123CFA9400019E564 /* NewBadgetProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBadgetProtocols.swift; sourceTree = "<group>"; };
 		497F696223CFA9400019E564 /* NewBadgetInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBadgetInteractor.swift; sourceTree = "<group>"; };
 		497F696323CFA9400019E564 /* NewBadgetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewBadgetViewController.xib; sourceTree = "<group>"; };
+		497F696B23D101E80019E564 /* HTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTextView.swift; sourceTree = "<group>"; };
+		497F696D23D2363A0019E564 /* NewBadgetDataRetriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBadgetDataRetriver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +132,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		496F0E2B23D48BFF00FD1737 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				496F0E2C23D48C1C00FD1737 /* Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		497218CF23CB935E0013ED1F = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +163,8 @@
 		497218DA23CB935E0013ED1F /* Habitissimo */ = {
 			isa = PBXGroup;
 			children = (
+				496F0E2B23D48BFF00FD1737 /* Extensions */,
+				497F696A23D101930019E564 /* Components */,
 				4972193623CCF8ED0013ED1F /* Models */,
 				4972193523CCF8B80013ED1F /* Services */,
 				4972191A23CB95880013ED1F /* BadgetList */,
@@ -184,7 +210,6 @@
 				4972192B23CBAB770013ED1F /* BudgetListTableViewCell.swift */,
 				4972192F23CCF5E20013ED1F /* BudgetListDataRetriver.swift */,
 				4972193923CCFCC70013ED1F /* BudgetListResolver.swift */,
-				4972193B23CCFFEE0013ED1F /* BudgetListMapper.swift */,
 			);
 			path = BadgetList;
 			sourceTree = "<group>";
@@ -194,6 +219,7 @@
 			children = (
 				4972193123CCF70D0013ED1F /* APIService.swift */,
 				4972193323CCF7F90013ED1F /* LocalService.swift */,
+				496F0E3223D4BF7300FD1737 /* ColorService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -211,13 +237,27 @@
 			isa = PBXGroup;
 			children = (
 				497F696323CFA9400019E564 /* NewBadgetViewController.xib */,
+				4972193B23CCFFEE0013ED1F /* NewBadgetMapper.swift */,
 				497F695E23CFA9400019E564 /* NewBadgetPresenter.swift */,
 				497F695F23CFA9400019E564 /* NewBadgetRouter.swift */,
 				497F696023CFA9400019E564 /* NewBadgetViewController.swift */,
 				497F696123CFA9400019E564 /* NewBadgetProtocols.swift */,
 				497F696223CFA9400019E564 /* NewBadgetInteractor.swift */,
+				497F696D23D2363A0019E564 /* NewBadgetDataRetriver.swift */,
 			);
 			path = NewBadget;
+			sourceTree = "<group>";
+		};
+		497F696A23D101930019E564 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				497F696B23D101E80019E564 /* HTextView.swift */,
+				496F0E2E23D4BADD00FD1737 /* HButton.swift */,
+				496F0E3423D4CAA300FD1737 /* HPickerView.swift */,
+				496F0E3623D4D00500FD1737 /* HTextField.swift */,
+				496F0E3823D6541400FD1737 /* HPickerLabel.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,20 +396,28 @@
 				497F696523CFA9400019E564 /* NewBadgetRouter.swift in Sources */,
 				4972192423CB959F0013ED1F /* BudgetListProtocols.swift in Sources */,
 				4972193023CCF5E20013ED1F /* BudgetListDataRetriver.swift in Sources */,
+				496F0E3923D6541400FD1737 /* HPickerLabel.swift in Sources */,
+				496F0E3323D4BF7300FD1737 /* ColorService.swift in Sources */,
 				497F695C23CE63B70019E564 /* Budget.swift in Sources */,
 				4972193823CCF9030013ED1F /* Category.swift in Sources */,
+				496F0E2D23D48C1C00FD1737 /* Color.swift in Sources */,
 				4972192323CB959F0013ED1F /* BudgetListViewController.swift in Sources */,
 				4972192D23CBAB770013ED1F /* BudgetListTableViewCell.swift in Sources */,
 				4972192123CB959F0013ED1F /* BudgetListPresenter.swift in Sources */,
 				497F696423CFA9400019E564 /* NewBadgetPresenter.swift in Sources */,
 				4972192523CB959F0013ED1F /* BudgetListInteractor.swift in Sources */,
+				496F0E3523D4CAA300FD1737 /* HPickerView.swift in Sources */,
+				497F696C23D101E80019E564 /* HTextView.swift in Sources */,
 				497218E623CB935E0013ED1F /* Habitissimo.xcdatamodeld in Sources */,
+				497F696E23D2363A0019E564 /* NewBadgetDataRetriver.swift in Sources */,
+				496F0E3723D4D00500FD1737 /* HTextField.swift in Sources */,
 				4972193423CCF7F90013ED1F /* LocalService.swift in Sources */,
 				4972193223CCF70D0013ED1F /* APIService.swift in Sources */,
-				4972193C23CCFFEE0013ED1F /* BudgetListMapper.swift in Sources */,
+				4972193C23CCFFEE0013ED1F /* NewBadgetMapper.swift in Sources */,
 				4972192223CB959F0013ED1F /* BudgetListRouter.swift in Sources */,
 				497F696823CFA9400019E564 /* NewBadgetInteractor.swift in Sources */,
 				4972193A23CCFCC70013ED1F /* BudgetListResolver.swift in Sources */,
+				496F0E2F23D4BADD00FD1737 /* HButton.swift in Sources */,
 				497F696623CFA9400019E564 /* NewBadgetViewController.swift in Sources */,
 				497F696723CFA9400019E564 /* NewBadgetProtocols.swift in Sources */,
 				497218DC23CB935E0013ED1F /* AppDelegate.swift in Sources */,
