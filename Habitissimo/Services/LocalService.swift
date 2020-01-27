@@ -15,7 +15,6 @@ enum Entity: String {
 
 class LocalService {
     let modelName = "Habitissimo"
-
     public let context: NSManagedObjectContext
     let persistentContainer: NSPersistentContainer
     
@@ -41,15 +40,7 @@ class LocalService {
         return fetchedItems
     }
     
-    func saveData(budget: Budget) {
-        let item = NSEntityDescription.insertNewObject(forEntityName: "Budget", into: context) as! Budget
-        item.customDescription = ""
-        item.email = ""
-        item.id = ""
-        item.location = ""
-        item.name = ""
-        item.phone = 44
-//        item.subcategory = ""
-        try! context.save()
+    func saveData() throws {
+        try context.save()
     }
 }

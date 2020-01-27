@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4916FDEC23DC8ED7000D4271 /* NewBudgetRetriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916FDEB23DC8ED7000D4271 /* NewBudgetRetriver.swift */; };
+		4916FDEE23DDAFA9000D4271 /* CheckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916FDED23DDAFA9000D4271 /* CheckService.swift */; };
 		496F0E2D23D48C1C00FD1737 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F0E2C23D48C1C00FD1737 /* Color.swift */; };
 		496F0E2F23D4BADD00FD1737 /* HButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F0E2E23D4BADD00FD1737 /* HButton.swift */; };
 		496F0E3323D4BF7300FD1737 /* ColorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F0E3223D4BF7300FD1737 /* ColorService.swift */; };
-		496F0E3723D4D00500FD1737 /* HTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F0E3623D4D00500FD1737 /* HTextField.swift */; };
 		496F0E3923D6541400FD1737 /* HPickerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F0E3823D6541400FD1737 /* HPickerLabel.swift */; };
+		496F0E3D23D7846800FD1737 /* AutocompleteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F0E3C23D7846800FD1737 /* AutocompleteService.swift */; };
+		496F0E3F23D7898D00FD1737 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F0E3E23D7898D00FD1737 /* Location.swift */; };
+		496F0E4123D78F7000FD1737 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F0E4023D78F7000FD1737 /* LocationTableViewCell.swift */; };
 		497218DC23CB935E0013ED1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497218DB23CB935E0013ED1F /* AppDelegate.swift */; };
 		497218DE23CB935E0013ED1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497218DD23CB935E0013ED1F /* SceneDelegate.swift */; };
 		497218E623CB935E0013ED1F /* Habitissimo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 497218E423CB935E0013ED1F /* Habitissimo.xcdatamodeld */; };
@@ -62,11 +66,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4916FDEB23DC8ED7000D4271 /* NewBudgetRetriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBudgetRetriver.swift; sourceTree = "<group>"; };
+		4916FDED23DDAFA9000D4271 /* CheckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckService.swift; sourceTree = "<group>"; };
 		496F0E2C23D48C1C00FD1737 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		496F0E2E23D4BADD00FD1737 /* HButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HButton.swift; sourceTree = "<group>"; };
 		496F0E3223D4BF7300FD1737 /* ColorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorService.swift; sourceTree = "<group>"; };
-		496F0E3623D4D00500FD1737 /* HTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTextField.swift; sourceTree = "<group>"; };
 		496F0E3823D6541400FD1737 /* HPickerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPickerLabel.swift; sourceTree = "<group>"; };
+		496F0E3C23D7846800FD1737 /* AutocompleteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteService.swift; sourceTree = "<group>"; };
+		496F0E3E23D7898D00FD1737 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		496F0E4023D78F7000FD1737 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		497218D823CB935E0013ED1F /* Habitissimo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habitissimo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		497218DB23CB935E0013ED1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		497218DD23CB935E0013ED1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -218,6 +226,8 @@
 				4972193123CCF70D0013ED1F /* APIService.swift */,
 				4972193323CCF7F90013ED1F /* LocalService.swift */,
 				496F0E3223D4BF7300FD1737 /* ColorService.swift */,
+				496F0E3C23D7846800FD1737 /* AutocompleteService.swift */,
+				4916FDED23DDAFA9000D4271 /* CheckService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -227,6 +237,7 @@
 			children = (
 				4972193723CCF9030013ED1F /* Category.swift */,
 				497F695B23CE63B70019E564 /* Budget.swift */,
+				496F0E3E23D7898D00FD1737 /* Location.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -242,6 +253,8 @@
 				497F696123CFA9400019E564 /* NewBadgetProtocols.swift */,
 				497F696223CFA9400019E564 /* NewBadgetInteractor.swift */,
 				497F696D23D2363A0019E564 /* NewBadgetDataRetriver.swift */,
+				496F0E4023D78F7000FD1737 /* LocationTableViewCell.swift */,
+				4916FDEB23DC8ED7000D4271 /* NewBudgetRetriver.swift */,
 			);
 			path = NewBadget;
 			sourceTree = "<group>";
@@ -251,7 +264,6 @@
 			children = (
 				497F696B23D101E80019E564 /* HTextView.swift */,
 				496F0E2E23D4BADD00FD1737 /* HButton.swift */,
-				496F0E3623D4D00500FD1737 /* HTextField.swift */,
 				496F0E3823D6541400FD1737 /* HPickerLabel.swift */,
 			);
 			path = Components;
@@ -394,7 +406,10 @@
 				4972192423CB959F0013ED1F /* BudgetListProtocols.swift in Sources */,
 				4972193023CCF5E20013ED1F /* BudgetListDataRetriver.swift in Sources */,
 				496F0E3923D6541400FD1737 /* HPickerLabel.swift in Sources */,
+				496F0E4123D78F7000FD1737 /* LocationTableViewCell.swift in Sources */,
+				4916FDEC23DC8ED7000D4271 /* NewBudgetRetriver.swift in Sources */,
 				496F0E3323D4BF7300FD1737 /* ColorService.swift in Sources */,
+				496F0E3D23D7846800FD1737 /* AutocompleteService.swift in Sources */,
 				497F695C23CE63B70019E564 /* Budget.swift in Sources */,
 				4972193823CCF9030013ED1F /* Category.swift in Sources */,
 				496F0E2D23D48C1C00FD1737 /* Color.swift in Sources */,
@@ -406,15 +421,16 @@
 				497F696C23D101E80019E564 /* HTextView.swift in Sources */,
 				497218E623CB935E0013ED1F /* Habitissimo.xcdatamodeld in Sources */,
 				497F696E23D2363A0019E564 /* NewBadgetDataRetriver.swift in Sources */,
-				496F0E3723D4D00500FD1737 /* HTextField.swift in Sources */,
 				4972193423CCF7F90013ED1F /* LocalService.swift in Sources */,
 				4972193223CCF70D0013ED1F /* APIService.swift in Sources */,
 				4972193C23CCFFEE0013ED1F /* NewBadgetMapper.swift in Sources */,
 				4972192223CB959F0013ED1F /* BudgetListRouter.swift in Sources */,
+				496F0E3F23D7898D00FD1737 /* Location.swift in Sources */,
 				497F696823CFA9400019E564 /* NewBadgetInteractor.swift in Sources */,
 				4972193A23CCFCC70013ED1F /* BudgetListResolver.swift in Sources */,
 				496F0E2F23D4BADD00FD1737 /* HButton.swift in Sources */,
 				497F696623CFA9400019E564 /* NewBadgetViewController.swift in Sources */,
+				4916FDEE23DDAFA9000D4271 /* CheckService.swift in Sources */,
 				497F696723CFA9400019E564 /* NewBadgetProtocols.swift in Sources */,
 				497218DC23CB935E0013ED1F /* AppDelegate.swift in Sources */,
 				497218DE23CB935E0013ED1F /* SceneDelegate.swift in Sources */,

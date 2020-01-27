@@ -12,13 +12,15 @@ import UIKit
 class NewBadgetViewController: UIViewController, NewBadgetViewProtocol {
 	var presenter: NewBadgetPresenterProtocol?
 
+    @IBOutlet weak var locationTableHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var descriptionView: HTextView!
     @IBOutlet weak var categoryPickerView: UIPickerView!
     @IBOutlet weak var categoryButton: HButton!
-    @IBOutlet weak var locationTextField: HTextField!
+    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var locationTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,17 @@ class NewBadgetViewController: UIViewController, NewBadgetViewProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupTableView()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        presenter?.viewWillDisappear()
+        super.viewWillDisappear(animated)
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.updateViewConstraints()
+        locationTableHeightConstraint?.constant = locationTableView.contentSize.height
     }
     
     func reloadCategories() {
@@ -41,10 +54,43 @@ class NewBadgetViewController: UIViewController, NewBadgetViewProtocol {
     func updateCategoryComponent(text: String) {
         categoryButton.updateTitle(text: text)
     }
+    
+    func updateLocationComponent(text: String) {
+        locationTextField.text = text
+        locationTableView.isHidden = true
+    }
+    
+    func reloadLocation() {
+        locationTableView.reloadData()
+    }
+    
+    func showAlert(title: String, text: String) {
+        let alert = UIAlertController.init(title: title, message: text, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        show(alert, sender: nil)
+    }
+    
+    private func setupTableView() {
+        locationTextField.delegate = self
+        locationTableView.delegate = self
+        locationTableView.dataSource = self
+        locationTableView.register(LocationTableViewCell.self, forCellReuseIdentifier: LocationTableViewCell.identifier)
+    }
 
     @IBAction func categoryDidTap(_ sender: Any) {
         categoryButton.editingSetup()
         presenter?.requestCategory()
+    }
+    
+    @IBAction func saveButtonDidTap(_ sender: Any) {
+        presenter?.requestSave(
+            customDescription: descriptionView.text,
+            email: emailTextField.text,
+            id: "",
+            location: locationTextField.text,
+            name: nameTextField.text,
+            phone: phoneTextField.text
+        )
     }
 }
 extension NewBadgetViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -89,4 +135,39 @@ extension NewBadgetViewController: UIPickerViewDelegate, UIPickerViewDataSource 
     }
 }
 
+extension NewBadgetViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter?.locations?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let identifier = LocationTableViewCell.identifier
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? LocationTableViewCell else {
+            return UITableViewCell()
+        }
+        let row = indexPath.row
+        let location = presenter?.locations?[row]
+        cell.textLabel?.text = location?.name
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        presenter?.locationSelected(row:row)
+    }
+}
 
+extension NewBadgetViewController: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        guard let text = textField.text else {
+            return
+        }
+        locationTextField.textColor = ColorService.defaultTextColor
+        locationTableView.isHidden = false
+        presenter?.locationTextInput(text: text)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        locationTableView.isHidden = true
+    }
+}

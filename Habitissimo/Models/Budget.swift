@@ -11,7 +11,6 @@ import CoreData
 
 @objc(Budget)
 class Budget: NSManagedObject {
-
     class func newBudget(context: NSManagedObjectContext) -> Budget{
         guard let entity = NSEntityDescription.entity(forEntityName: "Budget", in: context) else {
             return Budget()

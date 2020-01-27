@@ -12,4 +12,14 @@ class NewBadgetMapper {
     class func mapCategories(data: Data) -> [Category]? {
         return try? JSONDecoder().decode(Array<Category>.self, from: data)
     }
+    
+    class func mapLocations(data: Data) -> [Location]? {
+        var locations = [Location]()
+        do {
+            locations = try JSONDecoder().decode(Array<Location>.self, from: data)
+        } catch {
+            print(error)
+        }
+        return locations
+    }
 }

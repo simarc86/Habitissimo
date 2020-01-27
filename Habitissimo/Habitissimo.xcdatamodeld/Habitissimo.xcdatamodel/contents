@@ -6,7 +6,7 @@
         <attribute name="id" attributeType="String"/>
         <attribute name="location" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
-        <attribute name="phone" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="phone" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
         <element name="Budget" positionX="-63" positionY="-18" width="128" height="133"/>

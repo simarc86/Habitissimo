@@ -10,6 +10,9 @@
 import UIKit
 
 class NewBadgetInteractor: NewBadgetInteractorProtocol {
+    let retriver = NewBadgetDataRetriver()
+    var autocompleteService: AutocompleteService?
+    weak var presenter: NewBadgetPresenterProtocol?
     var categories: [Category]? {
         didSet {
             presenter?.reloadCategoriesData(categories: categories)
@@ -21,14 +24,11 @@ class NewBadgetInteractor: NewBadgetInteractorProtocol {
             presenter?.reloadSubcategoriesData(subcategories: subcategories)
        }
     }
-    
-    let retriver = NewBadgetDataRetriver()
-    weak var presenter: NewBadgetPresenterProtocol?
         
-    func fetchData() {
-        fetchCategories()
+    init() {
+        retriver.delegate = self
+        fetchLocations()
     }
-    
     func fetchCategories() {
         retriver.getCategories { (categories) in
             self.categories = categories
@@ -39,5 +39,62 @@ class NewBadgetInteractor: NewBadgetInteractorProtocol {
         retriver.getSubcategories(id: category.id) { (subcategories) in
             self.subcategories = subcategories
         }
+    }
+    
+    func fetchLocations() {
+        retriver.getLocations { (locations) in
+            guard let source = locations else {
+                return
+            }
+            self.autocompleteService = AutocompleteService(source: source)
+        }
+    }
+    
+    func searchText(text: String) {
+        let locations = autocompleteService?.search(text: text)
+        self.presenter?.locationsFiltered(locations: locations)
+    }
+    
+    func saveBudget(customDescription: String,
+                    email: String,
+                    id: String,
+                    location: String,
+                    name: String,
+                    phone: String) {
+        if !checkEmail(text: email) {
+            presenter?.invalidEmail()
+            return
+        }
+        
+        if !checkPhone(text: phone) {
+            presenter?.invalidPhone()
+            return
+        }
+        
+        retriver.saveBudget(
+            customDescription: customDescription,
+            email: email,
+            id: id,
+            location: location,
+            name: name,
+            phone: phone)
+    }
+    
+    func checkEmail(text: String) -> Bool {
+        return CheckService.isEmailFormat(text: text)
+    }
+    
+    func checkPhone(text: String) -> Bool {
+        return CheckService.isPhoneFormat(text: text)
+    }
+}
+
+extension NewBadgetInteractor: NewBadgetDataRetriverDelegate {
+    func success() {
+        presenter?.budgetSaved()
+    }
+    
+    func error() {
+//        presenter?.
     }
 }
