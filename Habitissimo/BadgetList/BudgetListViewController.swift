@@ -24,10 +24,12 @@ class BudgetListViewController: UIViewController, BudgetListViewProtocol {
         super.viewWillAppear(animated)
         presenter?.viewWillAppear()
     }
+    
     private func setupTableView() {
+        let cell = UINib.init(nibName: "BudgetListTableViewCell", bundle: nil)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(BudgetListTableViewCell.self, forCellReuseIdentifier: BudgetListTableViewCell.identifier)
+        tableView.register(cell, forCellReuseIdentifier: BudgetListTableViewCell.identifier)
     }
 
     func reloadData() {
@@ -54,9 +56,11 @@ extension BudgetListViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? BudgetListTableViewCell else {
             return UITableViewCell()
         }
+        
         let row = indexPath.row
         let budget = presenter?.budgets?[row]
         cell.setup(budget)
         return cell
     }
 }
+

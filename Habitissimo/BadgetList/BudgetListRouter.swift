@@ -27,7 +27,8 @@ class BudgetListRouter: BudgetListWireframeProtocol {
     }
     
     func showNewBudget() {
-        let newBadgetModule = NewBadgetRouter.createModule()
+        let newBadgetModule = NewBadgetRouter.createModule(previousViewController: viewController)
+        
         viewController?.present(newBadgetModule, animated: true, completion: nil)
     }
 }

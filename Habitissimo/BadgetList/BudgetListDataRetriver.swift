@@ -11,10 +11,6 @@ import Foundation
 class BudgetListDataRetriver {
     private let localService = LocalService()
     
-    func saveBudget(budget: Budget) {
-        localService.saveData(budget: budget)
-    }
-    
     func getBudgets(completion: @escaping ([Budget]?) -> ()) {
         localService.fetchData(entity: .budget) { (data) in
             guard let data = data,
